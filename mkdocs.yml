@@ -10,6 +10,7 @@ nav:
   - Configuration: configuration.md
   - API Reference: api.md
   - Code Structure: code-structure.md
+  - Changelog: changelog.md
   - Contributing: contributing.md
 
 theme:
