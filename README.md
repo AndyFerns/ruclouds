@@ -28,6 +28,10 @@ same concept of terminal-based procedural animation.)
 
 ## Preview
 
+<div align="center">
+    <img src="./docs/assets/gifs/ruclouds.gif" width=110%>
+</div>
+
 ```bash
 cargo run
 ```
@@ -81,6 +85,12 @@ for pre-built binaries for Linux, macOS (Intel + Apple Silicon), and Windows.
 - `midnight` — Subdued grey-blue clouds on a deep dark sky
 - `storm` — Heavy grey clouds on a dark overcast sky
 
+Preview of toggling through all default palettes:
+
+<div align="center">
+    <img src="./docs/assets/gifs/ruclouds-colpalette.gif" width=110%>
+</div>
+
 ### Custom palette
 
 Pass two comma-separated hex colours (cloud-light, cloud-dark):
@@ -108,6 +118,12 @@ All keys are polled non-blockingly every frame — they never pause the animatio
 | `Ctrl+C` | Quit (same clean shutdown path as `q`) |
 
 ---
+
+Preview of cycling through wind direction and changing domain-warp intensity values mid-animation:
+
+<div align="center">
+    <img src="./docs/assets/gifs/ruclouds-domwarp.gif" width=110%>
+</div>
 
 ## How It Works
 
