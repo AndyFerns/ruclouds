@@ -1,0 +1,18 @@
+[package]
+name = "ruclouds"
+version = "0.1.0"
+edition = "2021"
+description = "Animated terminal clouds using noise-field simulation"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+crossterm = "0.28"
+clap = { version = "4", features = ["derive"] }
+noise = "0.9"
+anyhow = "1"
+rand = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = true
