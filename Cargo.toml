@@ -11,7 +11,13 @@ homepage = "https://andyferns.github.io/ruclouds/"
 
 keywords = [ "terminal", "animation", "clouds", "cli", "ansi" ] 
 categories = [ "command-line-utilities", "graphics" ] 
-exclude = [ ".github/", "docs/", "assets/", "mkdocs.yml" ]
+exclude = [
+    ".github/",
+    "docs/",
+    "site/",
+    "mkdocs.yml",
+    "ARCHITECTURE.md"
+]
 
 [dependencies]
 crossterm = "0.28"
