@@ -1,11 +1,11 @@
 site_name: ruclouds
 site_description: Animated terminal clouds using noise-field simulation
 site_author: ruclouds
-repo_url: https://github.com/your-username/ruclouds
+repo_url: https://github.com/AndyFerns/ruclouds
 repo_name: ruclouds
 
 nav:
-  - Overview: overview.md
+  - Overview: index.md
   - Installation: installation.md
   - Configuration: configuration.md
   - API Reference: api.md
@@ -13,13 +13,14 @@ nav:
   - Contributing: contributing.md
 
 theme:
-  name: readthedocs
+  name: material
   palette:
     scheme: default
   features:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
+    - darkmode
 
 markdown_extensions:
   - tables
