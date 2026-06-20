@@ -1,0 +1,1661 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Animated terminal clouds using noise-field simulation">
+      
+      
+        <meta name="author" content="ruclouds">
+      
+      
+      
+        <link rel="prev" href="../configuration/">
+      
+      
+        <link rel="next" href="../code-structure/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>API Reference - ruclouds</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ruclouds" class="md-header__button md-logo" aria-label="ruclouds" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ruclouds
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AndyFerns/ruclouds" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ruclouds
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ruclouds" class="md-nav__button md-logo" aria-label="ruclouds" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ruclouds
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AndyFerns/ruclouds" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ruclouds
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Modules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-module-srcconfigrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config Module (src/config.rs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Config Module (src/config.rs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cliargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CliArgs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colormode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-module-srcsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Module (src/sim/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation Module (src/sim/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noisefield-srcsimnoise_fieldrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoiseField (src/sim/noise_field.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noisefield-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoiseField Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wind-srcsimwindrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wind (src/sim/wind.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wind-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wind Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-module-srcrender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render Module (src/render/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Render Module (src/render/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renderer-srcrendermodrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renderer (src/render/mod.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renderer Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framebuffer-srcrenderbufferrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrameBuffer (src/render/buffer.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framebuffer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrameBuffer Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-srcrenderhalfblockrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cell (src/render/halfblock.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cell Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palette-functions-srcrenderpaletters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palette Functions (src/render/palette.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-module-srcterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal Module (src/term/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminal Module (src/term/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#termguard-srctermguardrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TermGuard (src/term/guard.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termguard-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TermGuard Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capability-detection-srctermcapabilityrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability Detection (src/term/capability.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-module-srcinputrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Module (src/input.rs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Module (src/input.rs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions-module-srcactionsrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actions Module (src/actions.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-module-srcapprs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Module (src/app.rs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Module (src/app.rs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulation-constants-srcsimmodrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Constants (src/sim/mod.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-constants-srcrenderhalfblockrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendering Constants (src/render/halfblock.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Modules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-module-srcconfigrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config Module (src/config.rs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Config Module (src/config.rs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cliargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CliArgs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colormode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Config Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-module-srcsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Module (src/sim/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation Module (src/sim/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noisefield-srcsimnoise_fieldrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoiseField (src/sim/noise_field.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noisefield-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NoiseField Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wind-srcsimwindrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wind (src/sim/wind.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wind-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wind Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-module-srcrender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render Module (src/render/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Render Module (src/render/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renderer-srcrendermodrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renderer (src/render/mod.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renderer Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framebuffer-srcrenderbufferrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrameBuffer (src/render/buffer.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framebuffer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrameBuffer Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-srcrenderhalfblockrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cell (src/render/halfblock.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cell Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palette-functions-srcrenderpaletters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Palette Functions (src/render/palette.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-module-srcterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal Module (src/term/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminal Module (src/term/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#termguard-srctermguardrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TermGuard (src/term/guard.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termguard-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TermGuard Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capability-detection-srctermcapabilityrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability Detection (src/term/capability.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-module-srcinputrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Module (src/input.rs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Module (src/input.rs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions-module-srcactionsrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actions Module (src/actions.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-module-srcapprs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Module (src/app.rs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Module (src/app.rs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulation-constants-srcsimmodrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Constants (src/sim/mod.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-constants-srcrenderhalfblockrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendering Constants (src/render/halfblock.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="api-reference">API Reference</h1>
+<p>This section covers the main API components and their usage. ruclouds is primarily designed as a CLI application, but the internal modules are structured to be modular and potentially reusable.</p>
+<h2 id="core-modules">Core Modules</h2>
+<h3 id="config-module-srcconfigrs">Config Module (<code>src/config.rs</code>)</h3>
+<p>The config module handles CLI argument parsing and runtime configuration.</p>
+<h4 id="cliargs"><code>CliArgs</code></h4>
+<p>CLI arguments parsed by clap:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">CliArgs</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">speed</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span><span class="w">           </span><span class="c1">// Animation speed multiplier</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">density</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span><span class="w">         </span><span class="c1">// Cloud density threshold</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">palette</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w">      </span><span class="c1">// Palette name or custom hex pair</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">wind_speed</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span><span class="w">      </span><span class="c1">// Wind speed</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">wind_angle</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span><span class="w">      </span><span class="c1">// Wind angle in degrees</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">fps</span><span class="p">:</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span><span class="w">             </span><span class="c1">// Target frames per second</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">seed</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">,</span><span class="w">    </span><span class="c1">// Random seed</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">color_mode</span><span class="p">:</span><span class="w"> </span><span class="nc">ColorMode</span><span class="p">,</span><span class="w"> </span><span class="c1">// Color mode</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">no_sky</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w">         </span><span class="c1">// Use terminal background</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="config"><code>Config</code></h4>
+<p>Runtime configuration that includes both CLI args and runtime-adjustable parameters:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Config</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">speed</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">density</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">edge_softness</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">palette_index</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">wind_speed</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">wind_angle</span><span class="p">:</span><span class="w"> </span><span class="kt">f32</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">fps</span><span class="p">:</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">seed</span><span class="p">:</span><span class="w"> </span><span class="kt">u64</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">effective_color_mode</span><span class="p">:</span><span class="w"> </span><span class="nc">ColorMode</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">no_sky</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">storm_mode</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">warp_strong</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="colormode"><code>ColorMode</code></h4>
+<p>Color mode enumeration:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">ColorMode</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Auto</span><span class="p">,</span><span class="w">       </span><span class="c1">// Auto-detect terminal capability</span>
+<span class="w">    </span><span class="n">TrueColor</span><span class="p">,</span><span class="w">  </span><span class="c1">// 24-bit RGB</span>
+<span class="w">    </span><span class="n">Color256</span><span class="p">,</span><span class="w">   </span><span class="c1">// 256-color palette</span>
+<span class="w">    </span><span class="n">Ansi16</span><span class="p">,</span><span class="w">     </span><span class="c1">// 16 ANSI colors</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="config-methods">Config Methods</h4>
+<ul>
+<li><code>effective_speed()</code>: Returns speed with storm-mode boost applied</li>
+<li><code>effective_density()</code>: Returns density with storm-mode boost applied</li>
+<li><code>warp_intensity()</code>: Returns domain-warp intensity (0.5 or 2.0)</li>
+</ul>
+<h3 id="simulation-module-srcsim">Simulation Module (<code>src/sim/</code>)</h3>
+<p>The simulation module handles the noise-field cloud simulation.</p>
+<h4 id="simulation"><code>Simulation</code></h4>
+<p>Main simulation struct:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Simulation</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">noise</span><span class="p">:</span><span class="w"> </span><span class="nc">NoiseField</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">wind</span><span class="p">:</span><span class="w"> </span><span class="nc">Wind</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">time</span><span class="p">:</span><span class="w"> </span><span class="kt">f64</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="simulation-methods">Simulation Methods</h4>
+<ul>
+<li><code>new(seed: u64)</code>: Creates a new simulation with the given seed</li>
+<li><code>update(dt: f64, config: &amp;Config)</code>: Advances simulation by one timestep</li>
+<li><code>sample_pixel(px: f64, py: f64, config: &amp;Config) -&gt; (f64, f64)</code>: Returns (opacity, shade) for a sub-pixel position</li>
+<li><code>reseed(seed: u64)</code>: Reseeds noise fields and resets time</li>
+</ul>
+<h4 id="noisefield-srcsimnoise_fieldrs"><code>NoiseField</code> (<code>src/sim/noise_field.rs</code>)</h4>
+<p>Handles Perlin noise sampling with fractal Brownian motion:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">NoiseField</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">primary</span><span class="p">:</span><span class="w"> </span><span class="nc">Perlin</span><span class="p">,</span><span class="w">        </span><span class="c1">// Main noise generator</span>
+<span class="w">    </span><span class="n">warp</span><span class="p">:</span><span class="w"> </span><span class="nc">Perlin</span><span class="p">,</span><span class="w">          </span><span class="c1">// Domain warp noise</span>
+<span class="w">    </span><span class="n">octaves</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">f64</span><span class="p">,</span><span class="w"> </span><span class="kt">f64</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="c1">// (frequency, amplitude) per octave</span>
+<span class="w">    </span><span class="n">max_amplitude</span><span class="p">:</span><span class="w"> </span><span class="kt">f64</span><span class="p">,</span><span class="w">    </span><span class="c1">// Sum of amplitudes for normalization</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="noisefield-methods">NoiseField Methods</h4>
+<ul>
+<li><code>new(seed: u32)</code>: Creates a new noise field with 4-octave fBm</li>
+<li><code>sample_fbm(x: f64, y: f64, z: f64) -&gt; f64</code>: Samples fractal Brownian motion at 3D coordinates</li>
+<li><code>sample_warp(x: f64, y: f64, z: f64, intensity: f64) -&gt; (f64, f64)</code>: Computes domain-warp displacement</li>
+</ul>
+<h4 id="wind-srcsimwindrs"><code>Wind</code> (<code>src/sim/wind.rs</code>)</h4>
+<p>Manages wind offset for cloud drift:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Wind</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">offset_x</span><span class="p">:</span><span class="w"> </span><span class="kt">f64</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">offset_y</span><span class="p">:</span><span class="w"> </span><span class="kt">f64</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="wind-methods">Wind Methods</h4>
+<ul>
+<li><code>new()</code>: Creates a new wind with zero offset</li>
+<li><code>update(speed: f32, angle_deg: f32, dt: f64)</code>: Advances wind offset by one timestep</li>
+</ul>
+<h3 id="render-module-srcrender">Render Module (<code>src/render/</code>)</h3>
+<p>The render module handles frame buffer management and ANSI emission.</p>
+<h4 id="renderer-srcrendermodrs"><code>Renderer</code> (<code>src/render/mod.rs</code>)</h4>
+<p>Main renderer that manages double-buffered frame buffers:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Renderer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">current</span><span class="p">:</span><span class="w"> </span><span class="nc">FrameBuffer</span><span class="p">,</span>
+<span class="w">    </span><span class="n">previous</span><span class="p">:</span><span class="w"> </span><span class="nc">FrameBuffer</span><span class="p">,</span>
+<span class="w">    </span><span class="n">palettes</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Palette</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">custom_palette</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="n">Palette</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">first_frame</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="renderer-methods">Renderer Methods</h4>
+<ul>
+<li><code>new(width: u16, height: u16, custom_palette: Option&lt;Palette&gt;)</code>: Creates a new renderer</li>
+<li><code>palette_count() -&gt; usize</code>: Returns total number of available palettes</li>
+<li><code>resize(width: u16, height: u16)</code>: Resizes both frame buffers</li>
+<li><code>render_frame(sim: &amp;Simulation, config: &amp;Config, force_full: bool, buf: &amp;mut Vec&lt;u8&gt;)</code>: Computes frame, diffs, and emits ANSI commands</li>
+</ul>
+<h4 id="framebuffer-srcrenderbufferrs"><code>FrameBuffer</code> (<code>src/render/buffer.rs</code>)</h4>
+<p>Fixed-size grid of cells representing one frame:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">FrameBuffer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="kt">u16</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="kt">u16</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">cells</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Cell</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="framebuffer-methods">FrameBuffer Methods</h4>
+<ul>
+<li><code>new(width: u16, height: u16)</code>: Creates a new frame buffer</li>
+<li><code>resize(width: u16, height: u16)</code>: Resizes and clears the buffer</li>
+<li><code>get(x: u16, y: u16) -&gt; &amp;Cell</code>: Gets a cell at coordinates</li>
+<li><code>set(x: u16, y: u16, cell: Cell)</code>: Sets a cell at coordinates</li>
+</ul>
+<h4 id="cell-srcrenderhalfblockrs"><code>Cell</code> (<code>src/render/halfblock.rs</code>)</h4>
+<p>Represents a terminal cell with two vertical sub-pixels:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Cell</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">top</span><span class="p">:</span><span class="w"> </span><span class="nc">Rgb</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">bottom</span><span class="p">:</span><span class="w"> </span><span class="nc">Rgb</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="cell-methods">Cell Methods</h4>
+<ul>
+<li><code>new(top: Rgb, bottom: Rgb)</code>: Creates a new cell</li>
+<li><code>same_as(&amp;self, other: &amp;Cell) -&gt; bool</code>: Checks if cells match (for diffing)</li>
+</ul>
+<h4 id="palette-functions-srcrenderpaletters">Palette Functions (<code>src/render/palette.rs</code>)</h4>
+<ul>
+<li><code>builtin_palettes() -&gt; Vec&lt;Palette&gt;</code>: Returns built-in color palettes</li>
+<li><code>find_palette_index(name: &amp;str) -&gt; Option&lt;usize&gt;</code>: Finds palette by name</li>
+<li><code>parse_custom_palette(s: &amp;str) -&gt; Option&lt;Palette&gt;</code>: Parses custom hex palette</li>
+<li><code>blend(a: Rgb, b: Rgb, t: f64) -&gt; Rgb</code>: Linear interpolation between colors</li>
+<li><code>rgb_to_256(c: Rgb) -&gt; u8</code>: Converts RGB to nearest 256-color index</li>
+<li><code>rgb_to_ansi16(c: Rgb) -&gt; u8</code>: Converts RGB to nearest ANSI-16 index</li>
+<li><code>to_crossterm_color(rgb: Rgb, mode: ColorMode) -&gt; Color</code>: Maps RGB to crossterm Color</li>
+</ul>
+<h3 id="terminal-module-srcterm">Terminal Module (<code>src/term/</code>)</h3>
+<p>The terminal module handles terminal state management and capability detection.</p>
+<h4 id="termguard-srctermguardrs"><code>TermGuard</code> (<code>src/term/guard.rs</code>)</h4>
+<p>RAII guard for terminal state:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">TermGuard</span><span class="p">;</span>
+</code></pre></div>
+
+<h4 id="termguard-methods">TermGuard Methods</h4>
+<ul>
+<li><code>new() -&gt; Result&lt;Self&gt;</code>: Enables raw mode, enters alternate screen, hides cursor</li>
+<li><code>teardown()</code>: Disables raw mode, leaves alternate screen, shows cursor, flushes</li>
+</ul>
+<p>The <code>Drop</code> implementation automatically calls <code>teardown()</code> when the guard goes out of scope.</p>
+<h4 id="capability-detection-srctermcapabilityrs">Capability Detection (<code>src/term/capability.rs</code>)</h4>
+<ul>
+<li><code>detect_color_mode() -&gt; ColorMode</code>: Detects terminal color capability from environment variables</li>
+</ul>
+<h3 id="input-module-srcinputrs">Input Module (<code>src/input.rs</code>)</h3>
+<p>Handles non-blocking input polling.</p>
+<h4 id="functions">Functions</h4>
+<ul>
+<li><code>poll_action() -&gt; Option&lt;Action&gt;</code>: Non-blocking poll for keyboard input</li>
+<li><code>key_to_action(key: KeyEvent) -&gt; Option&lt;Action&gt;</code>: Maps key events to actions</li>
+</ul>
+<h3 id="actions-module-srcactionsrs">Actions Module (<code>src/actions.rs</code>)</h3>
+<p>Enumeration of runtime actions:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="nc">Action</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">IncreaseSpeed</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DecreaseSpeed</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DecreaseDensity</span><span class="p">,</span>
+<span class="w">    </span><span class="n">IncreaseDensity</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CyclePalette</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CycleWind</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ToggleWarp</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Reseed</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ToggleStorm</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Quit</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="application-module-srcapprs">Application Module (<code>src/app.rs</code>)</h3>
+<p>Main application loop and orchestration.</p>
+<h4 id="functions_1">Functions</h4>
+<ul>
+<li><code>run(args: CliArgs) -&gt; Result&lt;()&gt;</code>: Main application entry point</li>
+<li><code>resolve_palette(name: &amp;str) -&gt; (usize, Option&lt;Palette&gt;)</code>: Resolves palette from name or hex</li>
+<li><code>nearest_wind_angle_index(angle: f32) -&gt; usize</code>: Finds nearest wind angle index</li>
+</ul>
+<h2 id="constants">Constants</h2>
+<h3 id="simulation-constants-srcsimmodrs">Simulation Constants (<code>src/sim/mod.rs</code>)</h3>
+<ul>
+<li><code>SPATIAL_SCALE: f64 = 0.03</code>: Spatial scale for noise sampling</li>
+<li><code>TIME_SCALE: f64 = 0.15</code>: Time-axis scale for 3D noise</li>
+<li><code>SHADE_OFFSET: f64 = 0.4</code>: Offset for shading sample</li>
+</ul>
+<h3 id="rendering-constants-srcrenderhalfblockrs">Rendering Constants (<code>src/render/halfblock.rs</code>)</h3>
+<ul>
+<li><code>UPPER_HALF_BLOCK: char = '\u{2580}'</code>: The <code>▀</code> character used for half-block rendering</li>
+</ul>
+<h2 id="error-handling">Error Handling</h2>
+<p>The application uses <code>anyhow::Result</code> for error handling throughout. All functions that can fail return <code>Result&lt;T&gt;</code> where <code>T</code> is the return type.</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><code>crossterm 0.28</code>: Terminal control (raw mode, alt screen, cursor, input)</li>
+<li><code>clap 4</code>: CLI argument parsing</li>
+<li><code>noise 0.9</code>: Perlin noise generation</li>
+<li><code>anyhow 1</code>: Error handling</li>
+<li><code>rand 0.8</code>: Random number generation for seeding</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "darkmode"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
