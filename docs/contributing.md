@@ -16,7 +16,7 @@ Contributions are welcome to ruclouds. This guide covers how to get started with
 2. Clone your fork:
 
 ```bash
-git clone https://github.com/your-username/ruclouds.git
+git clone https://github.com/AndyFerns/ruclouds.git
 cd ruclouds
 ```
 

@@ -11,7 +11,7 @@
 ### Clone and Run
 
 ```bash
-git clone https://github.com/your-username/ruclouds.git
+git clone https://github.com/AndyFerns/ruclouds.git
 cd ruclouds
 cargo run --release
 ```
@@ -27,7 +27,7 @@ This installs the binary to your Cargo bin directory, making it available system
 
 ## Pre-built Binaries
 
-Pre-built binaries are available for Linux, macOS (Intel + Apple Silicon), and Windows on the [Releases](https://github.com/your-username/ruclouds/releases) page.
+Pre-built binaries are available for Linux, macOS (Intel + Apple Silicon), and Windows on the [Releases](https://github.com/AndyFerns/ruclouds/releases) page.
 
 Download the appropriate binary for your platform, make it executable (on Unix), and run it directly.
 
