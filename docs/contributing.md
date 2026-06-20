@@ -251,7 +251,7 @@ Improve the build process, add automated testing, or enhance release workflows.
 
 This project was inspired by lavat, a lava lamp simulation in the terminal. While lavat uses metaball-based simulation, ruclouds takes a different approach using noise-field cloud simulation to achieve wispy, organic cloud shapes.
 
-Link to lavat: [to be added]
+Lavat repo: [lavat](https://github.com/AngelJumbo/lavat)
 
 ## Code of Conduct
 
