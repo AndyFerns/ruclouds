@@ -1,0 +1,28 @@
+site_name: ruclouds
+site_description: Animated terminal clouds using noise-field simulation
+site_author: ruclouds
+repo_url: https://github.com/your-username/ruclouds
+repo_name: ruclouds
+
+nav:
+  - Overview: overview.md
+  - Installation: installation.md
+  - Configuration: configuration.md
+  - API Reference: api.md
+  - Code Structure: code-structure.md
+  - Contributing: contributing.md
+
+theme:
+  name: readthedocs
+  palette:
+    scheme: default
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+
+markdown_extensions:
+  - tables
+  - fenced_code
+  - codehilite
+  - attr_list
