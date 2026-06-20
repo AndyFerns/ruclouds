@@ -59,8 +59,18 @@ ruclouds
 
 ### Pre-built binaries
 
-Check the [Releases](https://github.com/AndyFerns/ruclouds/releases) page
+Check the GitHub [Releases](https://github.com/AndyFerns/ruclouds/releases) page
 for pre-built binaries for Linux, macOS (Intel + Apple Silicon), and Windows.
+
+### From crates .io registry
+
+[Crates.io registry link](https://crates.io/crates/ruclouds) for ruclouds
+
+```bash
+cargo install ruclouds
+```
+
+> for users who have cargo installed
 
 ---
 
