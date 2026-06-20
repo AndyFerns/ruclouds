@@ -1,17 +1,34 @@
-# ruclouds ☁️
+<div align="center">
 
-**Animated, drifting clouds in your terminal** — rendered in real time with
-ANSI truecolor and a half-block sub-pixel trick.
+# 🦀ruclouds ☁︎
 
-Built with Rust. Works on Windows (PowerShell, pwsh, cmd.exe) and Unix
+Animated, drifting clouds in your terminal
+
+<p>
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white">
+  <img src="https://img.shields.io/badge/ANSI_Truecolor-4D4D4D?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Procedural_Noise-4D4D4D?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Cross--Platform-4D4D4D?style=for-the-badge">
+</p>
+
+</div>
+
+- Built with Rust. Works on Windows (PowerShell, pwsh, cmd.exe) and Unix
 (bash, Kitty, Alacritty, and other modern terminals). Adapts to terminal
 resizing in real time.
+
+- Inspired by lavat (lava lamp simulation in the terminal) - this project uses
+noise-field cloud simulation instead of metaballs, taking a different approach
+to achieve similar visual effects.
+
+- (No copying intended, just drawing from the
+same concept of terminal-based procedural animation.)
 
 ---
 
 ## Preview
 
-```
+```bash
 cargo run
 ```
 
@@ -27,7 +44,7 @@ clean state — even on panic or Ctrl+C.
 
 ```bash
 # Clone and run
-git clone https://github.com/your-username/ruclouds.git
+git clone https://github.com/AndyFerns/ruclouds.git
 cd ruclouds
 cargo run --release
 
@@ -38,7 +55,7 @@ ruclouds
 
 ### Pre-built binaries
 
-Check the [Releases](https://github.com/your-username/ruclouds/releases) page
+Check the [Releases](https://github.com/AndyFerns/ruclouds/releases) page
 for pre-built binaries for Linux, macOS (Intel + Apple Silicon), and Windows.
 
 ---
