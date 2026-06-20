@@ -31,6 +31,10 @@ Pre-built binaries are available for Linux, macOS (Intel + Apple Silicon), and W
 
 Download the appropriate binary for your platform, make it executable (on Unix), and run it directly.
 
+### crates .io download
+
+> Coming soon!
+
 ## Quick Start
 
 Once installed, simply run:
@@ -91,6 +95,12 @@ Once running, you can adjust parameters in real-time using keyboard shortcuts:
 - `p`: Toggle "storm mode" (boosted speed + density)
 - `q` / `Esc`: Quit
 
+Live Control preview of changing colour palette mid-animation
+
+<div align="center">
+    <img src="./assets/gifs/ruclouds-colpalette.gif" width=120%>
+</div>
+
 ## Color Mode Selection
 
 The application auto-detects your terminal's color capability by default. You can override this:
@@ -105,6 +115,8 @@ ruclouds --color-mode 256
 # Force 16-color mode (basic ANSI)
 ruclouds --color-mode ansi16
 ```
+
+> im aware of some issues with colour palette selection on some terminals, ill try to fix them in the future.
 
 ## Custom Palettes
 
@@ -133,6 +145,12 @@ If you prefer clouds against your terminal's existing background instead of a sk
 ```bash
 ruclouds --no-sky
 ```
+
+( my personal favourite )
+
+<div align="center">
+    <img src="./assets/gifs/ruclouds-nosky.gif" width=120%>
+</div>
 
 ## Troubleshooting
 
@@ -175,3 +193,4 @@ Works on bash and most modern terminals (Kitty, Alacritty, iTerm2, Hyper, WezTer
 ### macOS
 
 Works in Terminal.app and third-party terminals like iTerm2. iTerm2 and other modern terminals support truecolor.
+(not tested these extensively, so would love some extra support!)
