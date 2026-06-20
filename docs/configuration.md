@@ -127,11 +127,14 @@ Uses standard 16 ANSI colors (VGA palette). Basic fallback for very old terminal
 ## Configuration Examples
 
 ### Fast, Dense Storm
+
 ```bash
 ruclouds --speed 2.0 --density 0.8 --palette storm --wind-speed 0.8
 ```
 
 Then press `p` to enable storm mode for even more intensity.
+
+> im aware of an issue which causes this to just render the base 4 terminal shades in 4 separate rectangles, and ill get to fixing that soon.
 
 ### Gentle Sunset
 ```bash

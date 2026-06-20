@@ -2,23 +2,30 @@
 
 ruclouds is a terminal-based cloud rendering application that creates animated, drifting clouds in real-time using ANSI truecolor and a half-block sub-pixel trick. Built with Rust, it works cross-platform on Windows (PowerShell, pwsh, cmd.exe) and Unix (bash, Kitty, Alacritty, and other modern terminals).
 
+<div align="center">
+
+    <img src="./assets/gifs/ruclouds.gif" width=120%>
+
+</div>
+
 ## What It Does
 
 ruclouds renders continuously animated clouds drifting across a sky gradient in your terminal. The simulation uses noise-field techniques (Perlin noise with fractal Brownian motion) to generate realistic cloud patterns that evolve smoothly over time. The application adapts to terminal resizing in real-time without stretching or cropping.
 
 ## Inspiration
 
-This project was inspired by lavat, a lava lamp simulation in the terminal. While lavat uses metaball-based simulation, ruclouds takes a different approach using noise-field cloud simulation to achieve wispy, organic cloud shapes.
+This project was inspired by [lavat](https://github.com/AngelJumbo/lavat), a lava lamp simulation in the terminal. While lavat uses metaball-based simulation, ruclouds takes a different approach using noise-field cloud simulation to achieve wispy, organic cloud shapes.
 
 ## Screenshots
 
-<!-- Placeholder for screenshot 1 -->
-<!-- Add a screenshot of the default white-grey palette running in a terminal -->
+![Sunset Palette](./assets/images/ruclouds-altcol.png)
+![White-Gray Palette](./assets/images/ruclouds.png)
 
-## Demo GIF
+## Colour Palettes live in action
 
-<!-- Placeholder for GIF -->
-<!-- Add a GIF showing the clouds animating in real-time, maybe cycling through different palettes -->
+<div align="center">
+    <img src="./assets/gifs/ruclouds-colpalette.gif" width=120%>
+</div>
 
 ## Key Features
 
@@ -49,7 +56,8 @@ This pipeline is a pure function of (x, y, time, wind_offset, config) - it never
 
 The application uses a double-buffer diff system where only cells that changed since the last frame emit ANSI writes, minimizing terminal I/O. This is especially important on slower Windows console paths.
 
-## Another Screenshot
+## Domain Warping
 
-<!-- Placeholder for screenshot 2 -->
-<!-- Add a screenshot showing a different palette, maybe sunset or midnight mode -->
+<div align="center">
+    <img src="./assets/gifs/ruclouds-domwarp.gif" width=120%>
+</div>
